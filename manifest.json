@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Pro Scrollshot",
+  "version": "3.0.1",
+  "description": "Erstellt einen FireShot-aehnlichen Full-Page-Screenshot und kopiert ihn direkt in die Zwischenablage.",
+  "permissions": [
+    "activeTab",
+    "clipboardWrite",
+    "notifications",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Pro Scrollshot"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "commands": {
+    "scroll-shot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S"
+      },
+      "description": "Full Page Screenshot in die Zwischenablage kopieren"
+    }
+  }
+}
