@@ -1,0 +1,116 @@
+Privacy Policy / Datenschutzerklaerung for Scrollshot Pro
+Last updated / Letzte Aktualisierung: March 9, 2026
+
+English:
+
+Overview
+
+Scrollshot Pro is a Chrome extension that helps users capture screenshots of the current active webpage. It can capture the full page or the visible area, then copy the result to the clipboard or save it locally as an image file.
+
+Data Processing
+
+Scrollshot Pro processes webpage content only to create the screenshot requested by the user.
+
+The extension:
+
+- processes webpage content locally in the user's browser
+- stores extension preferences locally using Chrome extension storage
+- stores a local usage counter for optional support-message timing
+- does not require account creation
+- does not sell user data
+- does not transfer screenshots or webpage content to the developer
+
+Data Collected
+
+Scrollshot Pro does not collect personal data such as names, email addresses, passwords, payment information, location data, or browsing history for transmission to the developer.
+
+The extension may locally process visible webpage content as part of creating a screenshot, but this processing stays on the user's device unless the user manually shares the screenshot afterward.
+
+Permissions
+
+Scrollshot Pro uses the following Chrome permissions:
+
+- activeTab: access the currently active tab when the user starts a screenshot
+- clipboardWrite: copy screenshots to the clipboard
+- downloads: save screenshots locally
+- notifications: show local screenshot status or error notifications
+- scripting: inject the packaged content script needed for screenshot capture
+- storage: save local preferences and local extension state
+- tabs: identify the correct active tab and browser window for capture
+
+Third-Party Services
+
+Scrollshot Pro includes an optional support link to PayPal.Me. If the user chooses to open that link, PayPal's own policies and terms apply.
+
+Scrollshot Pro does not use remote code, external analytics, or backend services to perform its screenshot features.
+
+User Control
+
+Users control when Scrollshot Pro runs. The extension performs screenshot actions only when the user explicitly starts them through the extension popup or keyboard shortcut.
+
+Users can also disable optional support prompts in the extension settings.
+
+Contact
+
+For support, feedback, or bug reports, please use the public project support page or repository page associated with Scrollshot Pro.
+
+
+
+
+---
+
+
+
+
+ Deutsch
+
+ Ueberblick
+
+Scrollshot Pro ist eine Chrome-Erweiterung, mit der Nutzer Screenshots der aktuell aktiven Webseite erstellen koennen. Die Erweiterung kann entweder die gesamte Seite oder den sichtbaren Bereich aufnehmen und das Ergebnis anschliessend in die Zwischenablage kopieren oder lokal als Bilddatei speichern.
+
+Datenverarbeitung:
+
+Scrollshot Pro verarbeitet Webseiteninhalte ausschliesslich, um den vom Nutzer angeforderten Screenshot zu erstellen.
+
+Die Erweiterung:
+
+- verarbeitet Webseiteninhalte nur lokal im Browser des Nutzers
+- speichert Erweiterungseinstellungen lokal ueber den Chrome-Erweiterungsspeicher
+- speichert einen lokalen Zaehler fuer optionale Support-Hinweise
+- erfordert keine Kontoerstellung
+- verkauft keine Nutzerdaten
+- uebertraegt keine Screenshots oder Webseiteninhalte an den Entwickler
+
+Erhobene Daten:
+
+Scrollshot Pro erhebt keine personenbezogenen Daten wie Namen, E-Mail-Adressen, Passwoerter, Zahlungsinformationen, Standortdaten oder Browserverlauf zur Uebermittlung an den Entwickler.
+
+Die Erweiterung kann sichtbare Webseiteninhalte lokal verarbeiten, um einen Screenshot zu erzeugen. Diese Verarbeitung bleibt jedoch auf dem Geraet des Nutzers, sofern der Nutzer den Screenshot nicht selbst weitergibt.
+
+Berechtigungen:
+
+Scrollshot Pro verwendet die folgenden Chrome-Berechtigungen:
+
+- activeTab: Zugriff auf den aktuell aktiven Tab, wenn der Nutzer einen Screenshot startet
+- clipboardWrite: Kopieren von Screenshots in die Zwischenablage
+- downloads: Lokales Speichern von Screenshots
+- notifications: Anzeigen lokaler Status- oder Fehlermeldungen zur Screenshot-Erstellung
+- scripting: Einbinden des mitgelieferten Content-Skripts fuer die Screenshot-Erstellung
+- storage: Speichern lokaler Einstellungen und lokaler Erweiterungsdaten
+- tabs: Ermitteln des richtigen aktiven Tabs und Browserfensters fuer die Aufnahme
+
+Dienste von Drittanbietern:
+
+Scrollshot Pro enthaelt einen optionalen Support-Link zu PayPal.Me. Wenn ein Nutzer diesen Link oeffnet, gelten die jeweiligen Richtlinien und Bedingungen von PayPal.
+
+Scrollshot Pro verwendet keinen Remote Code, keine externen Analysewerkzeuge und keine Backend-Dienste fuer die eigentliche Screenshot-Funktion.
+
+Kontrolle durch den Nutzer:
+
+Nutzer entscheiden selbst, wann Scrollshot Pro ausgefuehrt wird. Die Erweiterung fuehrt Screenshot-Aktionen nur dann aus, wenn der Nutzer sie ueber das Popup der Erweiterung oder ueber das Tastaturkuerzel ausdruecklich startet.
+
+Ausserdem koennen Nutzer optionale Support-Hinweise in den Einstellungen der Erweiterung deaktivieren.
+
+Kontakt:
+
+Fuer Support, Feedback oder Fehlermeldungen nutze bitte die oeffentliche Support-Seite oder die Projektseite von Scrollshot Pro.

@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  background:
+    radial-gradient(circle at top left, rgba(50, 115, 220, 0.22), transparent 42%),
+    linear-gradient(165deg, #0f172a 0%, #14213d 52%, #0f172a 100%);
+  color: #e2e8f0;
+  font: 14px/1.45 "Segoe UI", Arial, sans-serif;
+}
+
+.popup-shell {
+  padding: 18px;
+}
+
+.hero {
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: #7dd3fc;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.hero-copy {
+  margin: 8px 0 0;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.action-card {
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.64);
+  color: inherit;
+  cursor: pointer;
+  padding: 14px;
+  text-align: left;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.action-card:hover,
+.action-card:focus-visible {
+  border-color: rgba(125, 211, 252, 0.54);
+  background: rgba(19, 35, 64, 0.92);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.action-card:disabled {
+  cursor: progress;
+  opacity: 0.7;
+  transform: none;
+}
+
+.action-title {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.action-meta {
+  display: block;
+  margin-top: 4px;
+  color: #bfd4e9;
+  font-size: 12px;
+}
+
+.popup-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.footer-link {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #7dd3fc;
+  cursor: pointer;
+  font: inherit;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #bae6fd;
+  outline: none;
+}
+
+.status-message {
+  min-height: 18px;
+  margin: 12px 0 0;
+  color: #fca5a5;
+  font-size: 12px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollshot Pro</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <section class="hero">
+        <p class="eyebrow">Capture Toolkit</p>
+        <h1>Scrollshot Pro</h1>
+        <p class="hero-copy">Fast screenshots for the full page or just the visible view.</p>
+      </section>
+
+      <section class="actions" aria-label="Capture actions">
+        <button class="action-card" type="button" data-capture-mode="fullPage" data-output-target="clipboard">
+          <span class="action-title">Full Page</span>
+          <span class="action-meta">Copy to clipboard</span>
+        </button>
+        <button class="action-card" type="button" data-capture-mode="fullPage" data-output-target="download">
+          <span class="action-title">Full Page</span>
+          <span class="action-meta">Download PNG</span>
+        </button>
+        <button class="action-card" type="button" data-capture-mode="visibleArea" data-output-target="clipboard">
+          <span class="action-title">Visible Area</span>
+          <span class="action-meta">Copy to clipboard</span>
+        </button>
+        <button class="action-card" type="button" data-capture-mode="visibleArea" data-output-target="download">
+          <span class="action-title">Visible Area</span>
+          <span class="action-meta">Download PNG</span>
+        </button>
+      </section>
+
+      <footer class="popup-footer">
+        <button class="footer-link" id="support-link" type="button">Support development</button>
+        <button class="footer-link" id="open-settings" type="button">Settings</button>
+      </footer>
+
+      <p class="status-message" id="status-message" aria-live="polite"></p>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

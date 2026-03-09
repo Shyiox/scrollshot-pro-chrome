@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollshot Pro Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="page-hero">
+        <p class="eyebrow">Settings</p>
+        <h1>Scrollshot Pro</h1>
+        <p>Choose your default capture behavior and keep support prompts as quiet as you want.</p>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-label">General</p>
+            <h2>Capture defaults</h2>
+          </div>
+          <p class="card-copy">These defaults are used when you trigger the keyboard shortcut.</p>
+        </div>
+
+        <form class="settings-form" id="settings-form">
+          <label class="field">
+            <span>Default capture mode</span>
+            <select id="default-capture-mode" name="defaultCaptureMode">
+              <option value="fullPage">Full page</option>
+              <option value="visibleArea">Visible area</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span>Default output target</span>
+            <select id="default-output-target" name="defaultOutputTarget">
+              <option value="clipboard">Copy to clipboard</option>
+              <option value="download">Download PNG</option>
+            </select>
+          </label>
+
+          <label class="toggle">
+            <input id="show-success-toast" name="showSuccessToast" type="checkbox" />
+            <span>
+              <strong>Show success toast</strong>
+              <small>Display a quiet in-page toast after a successful capture.</small>
+            </span>
+          </label>
+
+          <label class="toggle">
+            <input id="show-support-prompts" type="checkbox" />
+            <span>
+              <strong>Show occasional support messages</strong>
+              <small>Show a rare donation reminder after repeated successful captures.</small>
+            </span>
+          </label>
+
+          <div class="actions-row">
+            <button class="primary-button" type="submit">Save settings</button>
+            <p class="save-state" id="save-state" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <p class="card-label">Support</p>
+            <h2>Support Scrollshot Pro</h2>
+          </div>
+          <p class="card-copy">If the extension helps you, you can support continued improvements with an optional PayPal donation.</p>
+        </div>
+
+        <div class="support-grid">
+          <div class="support-box">
+            <p class="support-stat-label">Successful captures</p>
+            <p class="support-stat" id="capture-count">0</p>
+          </div>
+          <div class="support-box">
+            <p class="support-stat-label">Support link</p>
+            <button class="secondary-button" id="support-button" type="button">Open PayPal.Me</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

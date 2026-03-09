@@ -9,12 +9,12 @@
     hiddenElements: [],
     originalScrollX: 0,
     originalScrollY: 0,
-    toastElement: null,
-    toastTimeoutId: null
+    activeToast: null,
+    toastTimeoutId: null,
+    toastQueue: Promise.resolve()
   };
 
   const TOAST_ID = "scrollshot-toast";
-  const TOAST_DURATION_MS = 2600;
 
   function getPageMetrics() {
     const doc = document.documentElement;
@@ -75,21 +75,55 @@
     state.hiddenElements = [];
   }
 
-  function showCompletionToast(title, message) {
-    if (!document.body) {
-      return;
+  function getToastStyles(variant) {
+    if (variant === "support") {
+      return {
+        iconText: "+",
+        iconBackground: "#0f766e",
+        background: "rgba(240, 253, 250, 0.98)",
+        border: "1px solid rgba(13, 148, 136, 0.18)",
+        textColor: "#134e4a",
+        messageColor: "#115e59"
+      };
     }
 
+    return {
+      iconText: "OK",
+      iconBackground: "#0f172a",
+      background: "rgba(245, 247, 250, 0.98)",
+      border: "1px solid rgba(148, 163, 184, 0.22)",
+      textColor: "#0f172a",
+      messageColor: "#334155"
+    };
+  }
+
+  function removeActiveToast() {
     if (state.toastTimeoutId) {
       window.clearTimeout(state.toastTimeoutId);
       state.toastTimeoutId = null;
     }
 
-    if (state.toastElement) {
-      state.toastElement.remove();
-      state.toastElement = null;
+    if (state.activeToast) {
+      state.activeToast.remove();
+      state.activeToast = null;
+    }
+  }
+
+  function showToastNow(payload) {
+    const {
+      title,
+      message,
+      variant = "success",
+      durationMs = variant === "support" ? 2600 : 2100
+    } = payload;
+
+    if (!document.body) {
+      return Promise.resolve();
     }
 
+    removeActiveToast();
+
+    const styles = getToastStyles(variant);
     const toast = document.createElement("div");
     toast.id = TOAST_ID;
     toast.setAttribute("role", "status");
@@ -100,12 +134,12 @@
     toast.style.display = "flex";
     toast.style.alignItems = "center";
     toast.style.gap = "12px";
-    toast.style.maxWidth = "min(320px, calc(100vw - 32px))";
+    toast.style.maxWidth = "min(340px, calc(100vw - 32px))";
     toast.style.padding = "10px 14px";
     toast.style.borderRadius = "12px";
-    toast.style.background = "rgba(245, 247, 250, 0.98)";
-    toast.style.color = "#0f172a";
-    toast.style.border = "1px solid rgba(148, 163, 184, 0.22)";
+    toast.style.background = styles.background;
+    toast.style.color = styles.textColor;
+    toast.style.border = styles.border;
     toast.style.font = '14px/1.2 "Segoe UI", Arial, sans-serif';
     toast.style.boxShadow = "0 14px 30px rgba(15, 23, 42, 0.16)";
     toast.style.backdropFilter = "blur(8px)";
@@ -118,13 +152,14 @@
     const iconWrap = document.createElement("div");
     iconWrap.style.display = "grid";
     iconWrap.style.placeItems = "center";
-    iconWrap.style.width = "24px";
+    iconWrap.style.minWidth = "24px";
     iconWrap.style.height = "24px";
+    iconWrap.style.padding = variant === "support" ? "0" : "0 6px";
     iconWrap.style.borderRadius = "999px";
-    iconWrap.style.background = "#0f172a";
+    iconWrap.style.background = styles.iconBackground;
     iconWrap.style.color = "#ffffff";
-    iconWrap.style.font = '700 14px/1 "Segoe UI", Arial, sans-serif';
-    iconWrap.textContent = "i";
+    iconWrap.style.font = '700 11px/1 "Segoe UI", Arial, sans-serif';
+    iconWrap.textContent = styles.iconText;
 
     const textWrap = document.createElement("div");
     textWrap.style.display = "flex";
@@ -140,7 +175,7 @@
     messageElement.textContent = message;
     messageElement.style.fontWeight = "500";
     messageElement.style.fontSize = "12px";
-    messageElement.style.color = "#334155";
+    messageElement.style.color = styles.messageColor;
 
     textWrap.appendChild(titleElement);
     textWrap.appendChild(messageElement);
@@ -148,26 +183,37 @@
     toast.appendChild(textWrap);
 
     document.body.appendChild(toast);
-    state.toastElement = toast;
+    state.activeToast = toast;
 
     requestAnimationFrame(() => {
       toast.style.opacity = "1";
       toast.style.transform = "translate(-50%, 0)";
     });
 
-    state.toastTimeoutId = window.setTimeout(() => {
-      toast.style.opacity = "0";
-      toast.style.transform = "translate(-50%, -10px)";
+    return new Promise((resolve) => {
+      state.toastTimeoutId = window.setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translate(-50%, -10px)";
 
-      window.setTimeout(() => {
-        if (state.toastElement === toast) {
-          toast.remove();
-          state.toastElement = null;
-        }
-      }, 180);
+        window.setTimeout(() => {
+          if (state.activeToast === toast) {
+            toast.remove();
+            state.activeToast = null;
+          }
 
-      state.toastTimeoutId = null;
-    }, TOAST_DURATION_MS);
+          state.toastTimeoutId = null;
+          resolve();
+        }, 180);
+      }, durationMs);
+    });
+  }
+
+  function enqueueToast(payload) {
+    state.toastQueue = state.toastQueue
+      .catch(() => {})
+      .then(() => showToastNow(payload));
+
+    return state.toastQueue;
   }
 
   function buildSegments(metrics) {
@@ -272,7 +318,6 @@
       void (async () => {
         try {
           await copyImageDataUrl(message.dataUrl);
-          showCompletionToast("Screenshot Pro", "Successfully copied");
           sendResponse({ ok: true });
         } catch (error) {
           sendResponse({
@@ -281,6 +326,17 @@
           });
         }
       })();
+
+      return true;
+    }
+
+    if (message?.type === "scrollshot-show-toast") {
+      void enqueueToast({
+        title: message.title,
+        message: message.message,
+        variant: message.variant
+      });
+      sendResponse({ ok: true });
 
       return true;
     }
