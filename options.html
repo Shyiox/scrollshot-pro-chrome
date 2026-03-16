@@ -3,88 +3,213 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scrollshot Pro Settings</title>
+    <title>Tallsnap Settings</title>
     <link rel="stylesheet" href="options.css" />
   </head>
   <body>
     <main class="page-shell">
       <section class="page-hero">
-        <p class="eyebrow">Settings</p>
-        <h1>Scrollshot Pro</h1>
-        <p>Choose your default capture behavior and keep support prompts as quiet as you want.</p>
+        <div class="brand-lockup">
+          <div class="brand-badge" aria-hidden="true">
+            <img src="icon.png" class="brand-mark" alt="" />
+          </div>
+          <div class="brand-copy">
+            <p class="eyebrow" data-i18n="options_eyebrow"></p>
+            <h1>Tallsnap</h1>
+            <p data-i18n="options_intro"></p>
+          </div>
+        </div>
       </section>
 
-      <section class="card">
-        <div class="card-header">
-          <div>
-            <p class="card-label">General</p>
-            <h2>Capture defaults</h2>
+      <form class="settings-stack" id="settings-form">
+        <section class="card">
+          <div class="section-head">
+            <div>
+              <p class="card-label" data-i18n="section_language"></p>
+              <h2 data-i18n="section_language"></h2>
+            </div>
+            <p class="section-copy" data-i18n="language_copy"></p>
           </div>
-          <p class="card-copy">These defaults are used when you trigger the keyboard shortcut.</p>
-        </div>
-
-        <form class="settings-form" id="settings-form">
-          <label class="field">
-            <span>Default capture mode</span>
-            <select id="default-capture-mode" name="defaultCaptureMode">
-              <option value="fullPage">Full page</option>
-              <option value="visibleArea">Visible area</option>
-            </select>
-          </label>
 
           <label class="field">
-            <span>Default output target</span>
-            <select id="default-output-target" name="defaultOutputTarget">
-              <option value="clipboard">Copy to clipboard</option>
-              <option value="download">Download PNG</option>
+            <span data-i18n="language_label"></span>
+            <select id="language-preference" name="languagePreference">
+              <option value="auto" data-i18n="language_auto"></option>
+              <option value="de" data-i18n="language_de"></option>
+              <option value="en" data-i18n="language_en"></option>
             </select>
           </label>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <div>
+              <p class="card-label" data-i18n="section_quick_actions"></p>
+              <h2 data-i18n="section_quick_actions"></h2>
+            </div>
+            <p class="section-copy" data-i18n="quick_actions_copy"></p>
+          </div>
+
+          <div class="shortcut-banner">
+            <strong id="shortcut-line"></strong>
+            <span id="shortcut-hint"></span>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="default_capture_label"></span>
+              <select id="default-capture-mode" name="defaultCaptureMode">
+                <option value="fullPage" data-i18n="popup_whole_page"></option>
+                <option value="visibleArea" data-i18n="popup_what_i_see"></option>
+                <option value="element" data-i18n="popup_element"></option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span data-i18n="default_output_label"></span>
+              <select id="default-output-target" name="defaultOutputTarget">
+                <option value="clipboard" data-i18n="popup_copy"></option>
+                <option value="download" data-i18n="popup_save"></option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <div>
+              <p class="card-label" data-i18n="section_advanced"></p>
+              <h2 data-i18n="section_advanced"></h2>
+            </div>
+            <p class="section-copy" data-i18n="advanced_copy"></p>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span data-i18n="default_format_label"></span>
+              <select id="default-output-format" name="defaultOutputFormat">
+                <option value="png" data-i18n="format_png"></option>
+                <option value="jpg" data-i18n="format_jpg"></option>
+                <option value="pdf" data-i18n="format_pdf"></option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span data-i18n="default_filename_label"></span>
+              <select id="default-filename-preset" name="defaultFilenamePreset">
+                <option value="title-date" data-i18n="filename_title_date"></option>
+                <option value="domain-date" data-i18n="filename_domain_date"></option>
+                <option value="timestamp" data-i18n="filename_timestamp"></option>
+              </select>
+            </label>
+          </div>
 
           <label class="toggle">
             <input id="show-success-toast" name="showSuccessToast" type="checkbox" />
             <span>
-              <strong>Show success toast</strong>
-              <small>Display a quiet in-page toast after a successful capture.</small>
+              <strong data-i18n="show_success_toast_label"></strong>
+              <small data-i18n="show_success_toast_copy"></small>
             </span>
           </label>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <div>
+              <p class="card-label" data-i18n="section_cleanup"></p>
+              <h2 data-i18n="section_cleanup"></h2>
+            </div>
+            <p class="section-copy" data-i18n="cleanup_copy"></p>
+          </div>
+
+          <label class="toggle">
+            <input id="default-cleanup-enabled" name="defaultCleanupEnabled" type="checkbox" />
+            <span>
+              <strong data-i18n="default_cleanup_label"></strong>
+              <small data-i18n="default_cleanup_copy"></small>
+            </span>
+          </label>
+
+          <div class="toggle-grid">
+            <label class="toggle">
+              <input id="cleanup-sticky" name="cleanupSticky" type="checkbox" />
+              <span>
+                <strong data-i18n="cleanup_sticky_label"></strong>
+                <small data-i18n="cleanup_sticky_copy"></small>
+              </span>
+            </label>
+
+            <label class="toggle">
+              <input id="cleanup-cookies" name="cleanupCookies" type="checkbox" />
+              <span>
+                <strong data-i18n="cleanup_cookies_label"></strong>
+                <small data-i18n="cleanup_cookies_copy"></small>
+              </span>
+            </label>
+
+            <label class="toggle">
+              <input id="cleanup-chat" name="cleanupChat" type="checkbox" />
+              <span>
+                <strong data-i18n="cleanup_chat_label"></strong>
+                <small data-i18n="cleanup_chat_copy"></small>
+              </span>
+            </label>
+
+            <label class="toggle">
+              <input id="cleanup-overlays" name="cleanupOverlays" type="checkbox" />
+              <span>
+                <strong data-i18n="cleanup_overlays_label"></strong>
+                <small data-i18n="cleanup_overlays_copy"></small>
+              </span>
+            </label>
+          </div>
+        </section>
+
+        <section class="card support-card">
+          <div class="section-head">
+            <div>
+              <p class="card-label" data-i18n="section_support"></p>
+              <h2 data-i18n="section_support"></h2>
+            </div>
+            <p class="section-copy" data-i18n="support_copy"></p>
+          </div>
 
           <label class="toggle">
             <input id="show-support-prompts" type="checkbox" />
             <span>
-              <strong>Show occasional support messages</strong>
-              <small>Show a rare donation reminder after repeated successful captures.</small>
+              <strong data-i18n="show_support_prompts_label"></strong>
+              <small data-i18n="show_support_prompts_copy"></small>
             </span>
           </label>
 
-          <div class="actions-row">
-            <button class="primary-button" type="submit">Save settings</button>
-            <p class="save-state" id="save-state" aria-live="polite"></p>
-          </div>
-        </form>
-      </section>
+          <div class="support-grid">
+            <div class="support-box">
+              <p class="support-stat-label" data-i18n="support_count_label"></p>
+              <p class="support-stat" id="capture-count">0</p>
+            </div>
 
-      <section class="card">
-        <div class="card-header">
-          <div>
-            <p class="card-label">Support</p>
-            <h2>Support Scrollshot Pro</h2>
+            <button class="coffee-card" id="support-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 10h8.5a1 1 0 0 1 1 1v3.5A4.5 4.5 0 0 1 12 19H10.5A3.5 3.5 0 0 1 7 15.5V11a1 1 0 0 1 1-1Z"></path>
+                <path d="M16.5 11h1a2.25 2.25 0 1 1 0 4.5h-1"></path>
+                <path d="M9 21h7"></path>
+                <path d="M10 6c0-1.1.8-1.7.8-2.8"></path>
+                <path d="M13.5 6c0-1 .8-1.6.8-2.7"></path>
+              </svg>
+              <span data-i18n="support_button_label"></span>
+            </button>
           </div>
-          <p class="card-copy">If the extension helps you, you can support continued improvements with an optional PayPal donation.</p>
-        </div>
+        </section>
 
-        <div class="support-grid">
-          <div class="support-box">
-            <p class="support-stat-label">Successful captures</p>
-            <p class="support-stat" id="capture-count">0</p>
-          </div>
-          <div class="support-box">
-            <p class="support-stat-label">Support link</p>
-            <button class="secondary-button" id="support-button" type="button">Open PayPal.Me</button>
-          </div>
+        <div class="save-row">
+          <button class="primary-button" type="submit" data-i18n="save_button"></button>
+          <p class="save-state" id="save-state" aria-live="polite"></p>
         </div>
-      </section>
+      </form>
     </main>
 
+    <script src="shared.js"></script>
+    <script src="i18n.js"></script>
     <script src="options.js"></script>
   </body>
 </html>

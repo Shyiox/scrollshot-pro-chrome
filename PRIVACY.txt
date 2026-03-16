@@ -1,116 +1,84 @@
-Privacy Policy / Datenschutzerklaerung for Scrollshot Pro
-Last updated / Letzte Aktualisierung: March 9, 2026
+﻿Tallsnap
 
-English:
+Last updated: March 14, 2026
+
+English
 
 Overview
 
-Scrollshot Pro is a Chrome extension that helps users capture screenshots of the current active webpage. It can capture the full page or the visible area, then copy the result to the clipboard or save it locally as an image file.
+Tallsnap is a Chrome extension for capturing the page you are currently viewing. You can capture the whole page, just the visible area, or a selected element, then either copy the result to your clipboard or save it on your device.
 
-Data Processing
+How data is handled
 
-Scrollshot Pro processes webpage content only to create the screenshot requested by the user.
+Tallsnap uses page content only to create the screenshot you requested. This happens locally in your browser. The extension does not upload screenshots or page content to the developer.
 
-The extension:
+The extension also saves a few local settings so it can remember things like your preferred language, screenshot options, cleanup preferences, and whether occasional support reminders should appear. A small local counter is used so those reminders stay rare and do not get in the way.
 
-- processes webpage content locally in the user's browser
-- stores extension preferences locally using Chrome extension storage
-- stores a local usage counter for optional support-message timing
-- does not require account creation
-- does not sell user data
-- does not transfer screenshots or webpage content to the developer
+What Tallsnap does not do
 
-Data Collected
+Tallsnap does not require an account. It does not sell user data. It does not send your screenshots to the developer. It also does not rely on remote code, external analytics, or a backend service for its main screenshot feature.
 
-Scrollshot Pro does not collect personal data such as names, email addresses, passwords, payment information, location data, or browsing history for transmission to the developer.
+Personal data
 
-The extension may locally process visible webpage content as part of creating a screenshot, but this processing stays on the user's device unless the user manually shares the screenshot afterward.
+Tallsnap does not collect personal information such as your name, email address, passwords, payment details, location, or browsing history for transfer to the developer.
+
+Visible page content may be processed while a screenshot is being created, but that stays on your device unless you decide to share the image yourself afterward.
 
 Permissions
 
-Scrollshot Pro uses the following Chrome permissions:
+The Chrome permissions used by Tallsnap are there only to make the screenshot feature work. activeTab and tabs are used so the extension can work with the correct tab when you start a capture. clipboardWrite is used if you choose to copy a screenshot. downloads is used if you choose to save one. notifications is used for local status or error messages. scripting is used to inject the packaged script needed to prepare and capture the page or a selected element. storage is used to save local settings and extension state.
 
-- activeTab: access the currently active tab when the user starts a screenshot
-- clipboardWrite: copy screenshots to the clipboard
-- downloads: save screenshots locally
-- notifications: show local screenshot status or error notifications
-- scripting: inject the packaged content script needed for screenshot capture
-- storage: save local preferences and local extension state
-- tabs: identify the correct active tab and browser window for capture
+Third-party services
 
-Third-Party Services
+Tallsnap includes an optional PayPal.Me link for voluntary support. If you open that link, PayPal's own terms and privacy rules apply there.
 
-Scrollshot Pro includes an optional support link to PayPal.Me. If the user chooses to open that link, PayPal's own policies and terms apply.
+Your control
 
-Scrollshot Pro does not use remote code, external analytics, or backend services to perform its screenshot features.
-
-User Control
-
-Users control when Scrollshot Pro runs. The extension performs screenshot actions only when the user explicitly starts them through the extension popup or keyboard shortcut.
-
-Users can also disable optional support prompts in the extension settings.
+Tallsnap only runs when you start it yourself from the extension popup or with the keyboard shortcut. Optional support reminders can be turned off at any time in the settings.
 
 Contact
 
-For support, feedback, or bug reports, please use the public project support page or repository page associated with Scrollshot Pro.
+If you need help, want to report a problem, or want to share feedback, please use the public project page or support page connected to Tallsnap.
 
 
+Tallsnap
 
+Letzte Aktualisierung: 14. März 2026
 
----
+Deutsch
 
+Überblick
 
+Tallsnap ist eine Chrome-Erweiterung für Screenshots der Seite, die du gerade geöffnet hast. Du kannst die ganze Seite, nur den sichtbaren Bereich oder ein ausgewähltes Element aufnehmen und das Ergebnis danach entweder in die Zwischenablage kopieren oder auf deinem Gerät speichern.
 
+Wie mit Daten umgegangen wird
 
- Deutsch
+Tallsnap verwendet Seiteninhalte nur, um den Screenshot zu erstellen, den du selbst ausgelöst hast. Das passiert ausschließlich lokal in deinem Browser. Screenshots oder Seiteninhalte werden nicht an den Entwickler hochgeladen.
 
- Ueberblick
+Außerdem speichert die Erweiterung einige lokale Einstellungen, damit Dinge wie Sprache, Screenshot-Optionen, Cleanup-Einstellungen und optionale Support-Hinweise erhalten bleiben. Ein kleiner lokaler Zähler sorgt dafür, dass diese Hinweise selten bleiben und nicht stören.
 
-Scrollshot Pro ist eine Chrome-Erweiterung, mit der Nutzer Screenshots der aktuell aktiven Webseite erstellen koennen. Die Erweiterung kann entweder die gesamte Seite oder den sichtbaren Bereich aufnehmen und das Ergebnis anschliessend in die Zwischenablage kopieren oder lokal als Bilddatei speichern.
+Was Tallsnap nicht macht
 
-Datenverarbeitung:
+Tallsnap braucht kein Konto. Die Erweiterung verkauft keine Nutzerdaten. Screenshots werden nicht an den Entwickler gesendet. Für die eigentliche Screenshot-Funktion werden auch kein Remote Code, keine externen Analysewerkzeuge und kein Backend-Dienst verwendet.
 
-Scrollshot Pro verarbeitet Webseiteninhalte ausschliesslich, um den vom Nutzer angeforderten Screenshot zu erstellen.
+Personenbezogene Daten
 
-Die Erweiterung:
+Tallsnap sammelt keine personenbezogenen Daten wie Name, E-Mail-Adresse, Passwörter, Zahlungsdaten, Standort oder Browserverlauf, um sie an den Entwickler weiterzugeben.
 
-- verarbeitet Webseiteninhalte nur lokal im Browser des Nutzers
-- speichert Erweiterungseinstellungen lokal ueber den Chrome-Erweiterungsspeicher
-- speichert einen lokalen Zaehler fuer optionale Support-Hinweise
-- erfordert keine Kontoerstellung
-- verkauft keine Nutzerdaten
-- uebertraegt keine Screenshots oder Webseiteninhalte an den Entwickler
+Beim Erstellen eines Screenshots können sichtbare Inhalte der geöffneten Seite verarbeitet werden. Diese Verarbeitung bleibt aber auf deinem Gerät, solange du das Bild nicht selbst weitergibst.
 
-Erhobene Daten:
+Berechtigungen
 
-Scrollshot Pro erhebt keine personenbezogenen Daten wie Namen, E-Mail-Adressen, Passwoerter, Zahlungsinformationen, Standortdaten oder Browserverlauf zur Uebermittlung an den Entwickler.
+Die von Tallsnap verwendeten Chrome-Berechtigungen werden nur für die Screenshot-Funktion benötigt. activeTab und tabs helfen dabei, mit dem richtigen Tab zu arbeiten, wenn du eine Aufnahme startest. clipboardWrite wird verwendet, wenn du einen Screenshot direkt kopieren möchtest. downloads wird verwendet, wenn du ihn speichern möchtest. notifications wird für lokale Status- oder Fehlermeldungen genutzt. scripting wird benötigt, um das mitgelieferte Skript für die Vorbereitung und Aufnahme der Seite oder eines ausgewählten Elements einzubinden. storage speichert lokale Einstellungen und den lokalen Zustand der Erweiterung.
 
-Die Erweiterung kann sichtbare Webseiteninhalte lokal verarbeiten, um einen Screenshot zu erzeugen. Diese Verarbeitung bleibt jedoch auf dem Geraet des Nutzers, sofern der Nutzer den Screenshot nicht selbst weitergibt.
+Dienste von Drittanbietern
 
-Berechtigungen:
+Tallsnap enthält einen optionalen PayPal.Me-Link für freiwillige Unterstützung. Wenn du ihn öffnest, gelten dort die Datenschutz- und Nutzungsbedingungen von PayPal.
 
-Scrollshot Pro verwendet die folgenden Chrome-Berechtigungen:
+Deine Kontrolle
 
-- activeTab: Zugriff auf den aktuell aktiven Tab, wenn der Nutzer einen Screenshot startet
-- clipboardWrite: Kopieren von Screenshots in die Zwischenablage
-- downloads: Lokales Speichern von Screenshots
-- notifications: Anzeigen lokaler Status- oder Fehlermeldungen zur Screenshot-Erstellung
-- scripting: Einbinden des mitgelieferten Content-Skripts fuer die Screenshot-Erstellung
-- storage: Speichern lokaler Einstellungen und lokaler Erweiterungsdaten
-- tabs: Ermitteln des richtigen aktiven Tabs und Browserfensters fuer die Aufnahme
+Tallsnap wird nur ausgeführt, wenn du es selbst über das Erweiterungs-Popup oder per Tastenkombination startest. Optionale Support-Hinweise kannst du in den Einstellungen jederzeit abschalten.
 
-Dienste von Drittanbietern:
+Kontakt
 
-Scrollshot Pro enthaelt einen optionalen Support-Link zu PayPal.Me. Wenn ein Nutzer diesen Link oeffnet, gelten die jeweiligen Richtlinien und Bedingungen von PayPal.
-
-Scrollshot Pro verwendet keinen Remote Code, keine externen Analysewerkzeuge und keine Backend-Dienste fuer die eigentliche Screenshot-Funktion.
-
-Kontrolle durch den Nutzer:
-
-Nutzer entscheiden selbst, wann Scrollshot Pro ausgefuehrt wird. Die Erweiterung fuehrt Screenshot-Aktionen nur dann aus, wenn der Nutzer sie ueber das Popup der Erweiterung oder ueber das Tastaturkuerzel ausdruecklich startet.
-
-Ausserdem koennen Nutzer optionale Support-Hinweise in den Einstellungen der Erweiterung deaktivieren.
-
-Kontakt:
-
-Fuer Support, Feedback oder Fehlermeldungen nutze bitte die oeffentliche Support-Seite oder die Projektseite von Scrollshot Pro.
+Wenn du Hilfe brauchst, ein Problem melden oder Feedback geben möchtest, nutze bitte die öffentliche Projektseite oder die Support-Seite von Tallsnap.
